@@ -14,4 +14,7 @@ Pod::Spec.new do |spec|
   spec.frameworks       = 'Accelerate', 'AVFoundation', 'AudioToolbox', 'CoreMedia', 'CoreVideo', 'MobileCoreServices', 'OpenGLES', 'QuartzCore', 'Security', 'UIKit'
   spec.libraries        = 'c++'
   spec.vendored_libraries = 'CardIO/libCardIO.a', 'CardIO/libopencv_core.a', 'CardIO/libopencv_imgproc.a'
+  spec.xcconfig         = { 'OTHER_LDFLAGS' => '-lc++ -ObjC', 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/CardIO'}
+  spec.module_map = 'CardIO.module'
+  spec.preserve_paths = 'CardIO.module'
 end
